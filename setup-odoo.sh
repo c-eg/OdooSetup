@@ -11,8 +11,8 @@ echo "======Installing and configuring odoo to run on startup======"
 wget -O - https://nightly.odoo.com/odoo.key | apt-key add -
 echo "deb http://nightly.odoo.com/14.0/nightly/deb/ ./" >> /etc/apt/sources.list.d/odoo.list
 apt-get update && apt-get install odoo
-systemctl enable odoo
+systemctl enable odoo -y
 
 echo "======Installing and configuring Nginx to run on startup======"
-apt install nginx
+apt install nginx -y
 systemctl enable nginx
