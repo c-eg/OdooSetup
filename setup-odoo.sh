@@ -1,18 +1,18 @@
 #!/bin/sh
 
-echo "======Updating and upgrading OS======"
+# Update system
 apt-get update -y && apt-get upgrade -y
 
-echo "======Installing and configuring postgresql to run on startup======"
+# Install PostgreSQL
 apt install posgresql -y
 systemctl enable postgresql
 
-echo "======Installing and configuring odoo to run on startup======"
+# Add Odoo repository and install
 wget -O - https://nightly.odoo.com/odoo.key | apt-key add -
 echo "deb http://nightly.odoo.com/14.0/nightly/deb/ ./" >> /etc/apt/sources.list.d/odoo.list
 apt-get update && apt-get install odoo -y
 systemctl enable odoo
 
-echo "======Installing and configuring Nginx to run on startup======"
+# Install Nginx
 apt install nginx -y
 systemctl enable nginx
