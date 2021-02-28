@@ -1,5 +1,4 @@
 #!/bin/sh
-sudo su
 
 echo "======Updating and upgrading OS======"
 apt-get update -y && apt-get upgrade -y
