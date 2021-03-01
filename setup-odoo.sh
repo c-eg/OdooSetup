@@ -4,8 +4,8 @@
 #######################################
 # CONFIGURATION
 
-WEBSITE_NAME = "_"
-ADMIN_EMAIL = "admin@example.com"
+WEBSITE_NAME="_"
+ADMIN_EMAIL="admin@example.com"
 
 #######################################
 
