@@ -151,7 +151,7 @@ server {
  # common gzip
  gzip_types text/css text/scss text/plain text/xml application/xml application/json application/javascript;
  gzip on;
-}"
+}" > /etc/nginx/sites-available/$WEBSITE_NAME.conf
 
 
 # Configure odoo to use proxy
