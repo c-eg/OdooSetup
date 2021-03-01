@@ -14,7 +14,7 @@ apt-get update -y && apt-get upgrade -y
 
 
 # Install PostgreSQL
-apt install posgresql -y
+apt install postgresql -y
 systemctl enable postgresql
 
 
@@ -159,8 +159,8 @@ echo "proxy_mode = True" >> /etc/odoo/odoo.conf
 
 
 # Reload Nginx and Odoo
-systemctl reload nginx
-systemctl reload odoo
+systemctl restart nginx
+systemctl restart odoo
 echo "============================
 CONFIGURATION HAS COMPLETED"
 
