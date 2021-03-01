@@ -80,7 +80,7 @@ echo "server {
   server_name $WEBSITE_NAME www.$WEBSITE_NAME;
 
   include snippets/letsencrypt.conf;
-}"
+}" > /etc/nginx/sites-available/$WEBSITE_NAME
 
 
 # link available website to enabled
@@ -92,7 +92,7 @@ systemctl restart nginx
 
 
 # Get SSL certificates
-sudo certbot certonly --agree-tos --email $ADMIN_EMAIL --webroot -w /var/lib/letsencrypt/ -d $WEBSITE_NAME -d www.$WEBSITE_NAME
+sudo certbot certonly --noninteractive --agree-tos --email $ADMIN_EMAIL --webroot -w /var/lib/letsencrypt/ -d $WEBSITE_NAME -d www.$WEBSITE_NAME
 
 
 # Add Odoo configuration to server block
