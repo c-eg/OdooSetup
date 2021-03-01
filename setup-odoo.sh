@@ -80,7 +80,7 @@ echo "server {
   server_name $WEBSITE_NAME www.$WEBSITE_NAME;
 
   include snippets/letsencrypt.conf;
-}" > /etc/nginx/sites-available/$WEBSITE_NAME
+}" > /etc/nginx/sites-available/$WEBSITE_NAME.conf
 
 
 # link available website to enabled
@@ -156,3 +156,12 @@ server {
 
 # Configure odoo to use proxy
 echo "proxy_mode = True" >> /etc/odoo/odoo.conf
+
+
+# Reload Nginx and Odoo
+systemctl reload nginx
+systemctl reload odoo
+echo "============================
+CONFIGURATION HAS COMPLETED"
+
+
